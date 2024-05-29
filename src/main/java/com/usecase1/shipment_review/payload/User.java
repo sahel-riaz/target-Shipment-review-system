@@ -7,7 +7,7 @@ import java.util.List;
 public class User {
     private String shipmentId;
     private Person sender;
-    private Person recipient;
+    private Person recipient;x
     private List<PackageDetail> packageDetails;
     private String shippingMethod;
     private String estimatedDeliveryDate;
