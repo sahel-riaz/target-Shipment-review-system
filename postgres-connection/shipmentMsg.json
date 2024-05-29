@@ -1,0 +1,40 @@
+{
+  "shipment_id": "SH234567891",
+  "sender": {
+    "name": "Jane Smith",
+    "address": "345 Church Street, City, Country",
+    "contact": "jane.smith@example.com"
+  },
+  "recipient": {
+    "name": "Ana Harper",
+    "address": "465 Ellen Street, City, Country",
+    "contact": "ana.harper@example.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG003",
+      "description": "Electrical",
+      "weight_kg": 8.6,
+      "dimensions_cm": {
+        "length": 30,
+        "width": 15,
+        "height": 12
+      }
+    },
+    {
+      "package_id": "PKG004",
+      "description": "Toys",
+      "weight_kg": 6.5,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 30,
+        "height": 10
+      }
+    }
+  ],
+  "shipping_method": "Express",
+  "estimated_delivery_date": "2024-06-15",
+  "total_cost": 60.00,
+  "currency": "INR",
+  "status": "In transit"
+}
