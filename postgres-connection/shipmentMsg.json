@@ -1,0 +1,40 @@
+{
+  "shipment_id": "SH567891234",
+  "sender": {
+    "name": "Zade Woe",
+    "address": "345 Church Street, City, Country",
+    "contact": "zade.woe@example.com"
+  },
+  "recipient": {
+    "name": "Josh Larsen",
+    "address": "465 Ellen Street, City, Country",
+    "contact": "josh.larsen@example.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG007",
+      "description": "Electrical",
+      "weight_kg": 8.6,
+      "dimensions_cm": {
+        "length": 30,
+        "width": 15,
+        "height": 12
+      }
+    },
+    {
+      "package_id": "PKG009",
+      "description": "Toys",
+      "weight_kg": 6.5,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 30,
+        "height": 10
+      }
+    }
+  ],
+  "shipping_method": "Express",
+  "estimated_delivery_date": "2024-06-15",
+  "total_cost": 60.00,
+  "currency": "INR",
+  "status": "In transit"
+}
