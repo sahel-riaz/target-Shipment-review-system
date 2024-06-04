@@ -14,28 +14,27 @@ import java.util.Map;
 public class Package {
 
 
-    @Column(name = "shipment_id")
-    private String shpId;
     @Id
     @Column(name = "package_id")
-    private String package_id;
-    @Column(name = "description")
+    private String pckId;
     private String description;
     @Column(name = "weight")
     private Double weight_kg;
-    @Column(name = "length")
     private Integer length;
-    @Column(name = "width")
     private Integer width;
-    @Column(name = "height")
     private Integer height;
 
     @Basic
     private Map<String, Integer> dimensions_cm;
 
-
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private Shipment shipment;
+    public void setLength(){
+        this.length = this.dimensions_cm.get("length");
+    }
+    public void setWidth(){
+        this.width = this.dimensions_cm.get("width");
+    }
+    public void setHeight(){
+        this.height = this.dimensions_cm.get("height");
+    }
 
 }
