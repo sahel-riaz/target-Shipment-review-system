@@ -1,10 +1,10 @@
-package com.target.kafka;
+package com.target.shipments;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KafkaApplicationTests {
+class ShipmentsApplicationTests {
 
 	@Test
 	void contextLoads() {
