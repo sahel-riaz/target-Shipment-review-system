@@ -1,18 +1,16 @@
-package com.target.shipment.entity;
+package com.target.shipments.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "shipments")
 public class Shipment {
-
     @Id
-    @Column(name = "shipment_id", length = 20, nullable = false)
+    @Column(name = "shipment_id", length = 20)
+    @JsonProperty("shipment_id")
     private String shipmentId;
 
     @Column(name = "sender", columnDefinition = "jsonb")
@@ -33,10 +31,9 @@ public class Shipment {
 
     @Column(name = "estimated_delivery_date")
     @JsonProperty("estimated_delivery_date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate estimatedDeliveryDate;
 
-    @Column(name = "total_cost")
+    @Column(name = "total_cost", precision = 38, scale = 2)
     @JsonProperty("total_cost")
     private BigDecimal totalCost;
 

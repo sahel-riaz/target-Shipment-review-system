@@ -1,0 +1,140 @@
+2024-06-04 14:39:37 INFO  c.t.s.ShipmentsApplicationTests - Starting ShipmentsApplicationTests using Java 22 with PID 14781 (started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 14:39:37 DEBUG c.t.s.ShipmentsApplicationTests - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 14:39:37 INFO  c.t.s.ShipmentsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 14:39:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 14:39:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+2024-06-04 14:39:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 14:39:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:39:40 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 14:39:41 INFO  c.t.s.ShipmentsApplicationTests - Started ShipmentsApplicationTests in 3.962 seconds (process running for 4.935)
+2024-06-04 14:39:41 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions assigned: [test_topic-0]
+2024-06-04 14:39:41 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions revoked: [test_topic-0]
+2024-06-04 14:39:42 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: Consumer stopped
+2024-06-04 14:39:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:39:58 INFO  c.t.shipments.ShipmentApplication - Starting ShipmentApplication using Java 22 with PID 14859 (/Users/sahelriaz/Documents/Target/code final/shipments/target/classes started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 14:39:58 DEBUG c.t.shipments.ShipmentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 14:39:58 INFO  c.t.shipments.ShipmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 14:39:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 14:39:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2024-06-04 14:39:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-04 14:39:58 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 864 ms
+2024-06-04 14:39:59 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 14:40:00 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:40:00 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 14:40:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-04 14:40:00 INFO  c.t.shipments.ShipmentApplication - Started ShipmentApplication in 3.096 seconds (process running for 3.336)
+2024-06-04 14:40:01 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions assigned: [test_topic-0]
+2024-06-04 14:40:55 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions revoked: [test_topic-0]
+2024-06-04 14:40:55 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: Consumer stopped
+2024-06-04 14:40:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:41:05 INFO  c.t.s.ShipmentsApplicationTests - Starting ShipmentsApplicationTests using Java 22 with PID 15306 (started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 14:41:05 DEBUG c.t.s.ShipmentsApplicationTests - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 14:41:05 INFO  c.t.s.ShipmentsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 14:41:06 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 14:41:06 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2024-06-04 14:41:08 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 14:41:09 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:41:10 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 14:41:11 INFO  c.t.s.ShipmentsApplicationTests - Started ShipmentsApplicationTests in 5.817 seconds (process running for 6.899)
+2024-06-04 14:41:11 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions assigned: [shipments_topic-0]
+2024-06-04 14:41:11 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions revoked: [shipments_topic-0]
+2024-06-04 14:41:12 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: Consumer stopped
+2024-06-04 14:41:12 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:41:29 INFO  c.t.shipments.ShipmentApplication - Starting ShipmentApplication using Java 22 with PID 15384 (/Users/sahelriaz/Documents/Target/code final/shipments/target/classes started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 14:41:29 DEBUG c.t.shipments.ShipmentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 14:41:29 INFO  c.t.shipments.ShipmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 14:41:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 14:41:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2024-06-04 14:41:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-04 14:41:30 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 998 ms
+2024-06-04 14:41:31 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 14:41:31 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 14:41:32 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 14:41:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-04 14:41:32 INFO  c.t.shipments.ShipmentApplication - Started ShipmentApplication in 3.605 seconds (process running for 3.936)
+2024-06-04 14:41:32 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions assigned: [shipments_topic-0]
+2024-06-04 14:41:46 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 14:41:46 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@3d72da5c
+2024-06-04 14:42:04 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"1","name":"Anagh deepak","age":"24"}
+2024-06-04 14:42:04 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@1b4f0dee
+2024-06-04 14:42:31 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"3","name":"John doe","age":"30"}
+2024-06-04 14:42:31 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@6486d7da
+2024-06-04 14:50:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-04 14:50:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-04 15:50:02 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: partitions revoked: [shipments_topic-0]
+2024-06-04 15:50:02 INFO  o.s.k.l.KafkaMessageListenerContainer - group_id: Consumer stopped
+2024-06-04 15:50:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:09:45 INFO  c.t.shipments.ShipmentApplication - Starting ShipmentApplication using Java 22 with PID 19977 (/Users/sahelriaz/Documents/Target/code final/shipments/target/classes started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 16:09:45 DEBUG c.t.shipments.ShipmentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 16:09:45 INFO  c.t.shipments.ShipmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 16:09:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 16:09:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2024-06-04 16:09:46 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-04 16:09:46 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 856 ms
+2024-06-04 16:09:46 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 16:09:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:09:47 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 16:09:47 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-04 16:09:48 INFO  c.t.shipments.ShipmentApplication - Started ShipmentApplication in 3.424 seconds (process running for 3.671)
+2024-06-04 16:09:48 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: partitions assigned: [shipments_topic-0]
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":2,"name":"Sahel Riaz","age":22}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@6f0e08bd
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":2,"name":"Sahel Riaz","age":22}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@3192587d
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":2,"name":"Sahel Riaz","age":22}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@2ea9c59f
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@492a9287
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@2dbc6a89
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@6761b594
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@6f187376
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@7e041589
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@37816dc7
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"2","name":"Sahel Riaz","age":"22"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@31c40d34
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"1","name":"Anagh deepak","age":"24"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@36d90b20
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"3","name":"John doe","age":"30"}
+2024-06-04 16:09:48 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@4d27d3ff
+2024-06-04 16:10:02 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"4","name":"Jane doe","age":"18"}
+2024-06-04 16:10:02 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@349e6226
+2024-06-04 16:11:01 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-04 16:11:01 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-04 16:11:05 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: partitions revoked: [shipments_topic-0]
+2024-06-04 16:11:05 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: Consumer stopped
+2024-06-04 16:11:05 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:11:19 INFO  c.t.s.ShipmentsApplicationTests - Starting ShipmentsApplicationTests using Java 22 with PID 20484 (started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 16:11:19 DEBUG c.t.s.ShipmentsApplicationTests - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 16:11:19 INFO  c.t.s.ShipmentsApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 16:11:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 16:11:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2024-06-04 16:11:21 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 16:11:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:11:22 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 16:11:23 INFO  c.t.s.ShipmentsApplicationTests - Started ShipmentsApplicationTests in 4.274 seconds (process running for 5.049)
+2024-06-04 16:11:23 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: partitions assigned: [shipments_topic-0]
+2024-06-04 16:11:24 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: partitions revoked: [shipments_topic-0]
+2024-06-04 16:11:24 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: Consumer stopped
+2024-06-04 16:11:24 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:11:37 INFO  c.t.shipments.ShipmentApplication - Starting ShipmentApplication using Java 22 with PID 20548 (/Users/sahelriaz/Documents/Target/code final/shipments/target/classes started by sahelriaz in /Users/sahelriaz/Documents/Target/code final/shipments)
+2024-06-04 16:11:37 DEBUG c.t.shipments.ShipmentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-04 16:11:37 INFO  c.t.shipments.ShipmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-04 16:11:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04 16:11:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2024-06-04 16:11:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-04 16:11:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 858 ms
+2024-06-04 16:11:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04 16:11:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04 16:11:40 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04 16:11:40 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-04 16:11:40 INFO  c.t.shipments.ShipmentApplication - Started ShipmentApplication in 3.008 seconds (process running for 3.248)
+2024-06-04 16:11:40 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: partitions assigned: [shipments_topic-0]
+2024-06-04 16:12:11 INFO  c.t.s.service.KafkaConsumerService - Received message: {"testId":"5","name":"test","age":"21"}
+2024-06-04 16:12:11 INFO  c.t.s.service.KafkaConsumerService - Message consumed and saved: com.target.shipments.model.TestTable@39a01cc6
+2024-06-04 16:12:24 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-04 16:12:24 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms

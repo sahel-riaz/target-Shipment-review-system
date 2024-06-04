@@ -1,10 +1,10 @@
-package com.target.shipment;
+package com.target.shipments;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShipmentApplicationTests {
+class ShipmentsApplicationTests {
 
 	@Test
 	void contextLoads() {
