@@ -11,30 +11,25 @@ import java.util.Map;
 @AllArgsConstructor
 @Entity
 @Table(name = "package")
+@ToString(exclude = "shipment")
 public class Package {
-
-
     @Id
-    @Column(name = "package_id")
-    private String pckId;
+    private String package_id;
     private String description;
-    @Column(name = "weight")
     private Double weight_kg;
     private Integer length;
     private Integer width;
     private Integer height;
-
     @Basic
     private Map<String, Integer> dimensions_cm;
 
-    public void setLength(){
-        this.length = this.dimensions_cm.get("length");
+    @PrePersist
+    @PreUpdate
+    private void setDimensions() {
+        if (dimensions_cm != null) {
+            this.length = dimensions_cm.get("length");
+            this.width = dimensions_cm.get("width");
+            this.height = dimensions_cm.get("height");
+        }
     }
-    public void setWidth(){
-        this.width = this.dimensions_cm.get("width");
-    }
-    public void setHeight(){
-        this.height = this.dimensions_cm.get("height");
-    }
-
 }
