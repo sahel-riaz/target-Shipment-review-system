@@ -4,21 +4,20 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
-@Table(name = "location")
-public class Location {
-   @Id
+@ToString(exclude = "shipment")
+@Table(name = "users")
+public class User {
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "location_id")
-    private Integer locationId;
-    private String identity; //Sender or Recipient
+    private Integer user_id;
+    private String identity;
     private String name;
     private String address;
     private String contact;
-
 }
