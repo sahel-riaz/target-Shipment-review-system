@@ -1,7 +1,8 @@
 package com.target.shipments.repository;
 
-import com.target.shipments.model.Shipment;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import com.target.shipments.entity.Shipment;
 
 public interface ShipmentRepository extends JpaRepository<Shipment, String> {
 }
