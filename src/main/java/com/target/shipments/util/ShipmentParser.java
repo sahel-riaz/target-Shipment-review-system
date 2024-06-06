@@ -9,88 +9,109 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 public class ShipmentParser {
 
+    private static final Pattern CURRENCY_PATTERN = Pattern.compile("^[A-Z]{3}$");
+    private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
+
     private static int generateRandomUserId() {
         Random random = new Random();
-        return random.nextInt(10000); 
+        return random.nextInt(10000);
     }
 
     public static Object[] parseShipment(String json) {
         ObjectMapper mapper = new ObjectMapper();
         Shipment shipment = new Shipment();
         User[] users = new User[2];
-        Set<Package> packages = new HashSet<>(); 
+        Set<Package> packages = new HashSet<>();
 
         try {
             JsonNode root = mapper.readTree(json);
 
-            // Parsing shipment ID
-            shipment.setId(root.path("shipment_id").asText());
-            System.out.println("Shipment ID: " + shipment.getId());
 
-            // Parse sender
+            shipment.setId(validateString(root.path("shipment_id").asText(), "shipment_id"));
+
+
             User sender = new User();
             int senderId = generateRandomUserId();
             sender.setUserId(senderId);
-            sender.setName(root.path("sender").path("name").asText());
-            sender.setAddress(root.path("sender").path("address").asText());
-            sender.setContact(root.path("sender").path("contact").asText());
+            sender.setName(validateString(root.path("sender").path("name").asText(), "sender.name"));
+            sender.setAddress(validateString(root.path("sender").path("address").asText(), "sender.address"));
+            sender.setContact(validateString(root.path("sender").path("contact").asText(), "sender.contact"));
             users[0] = sender;
             shipment.setSenderId(senderId);
-            System.out.println("Sender ID: " + sender.getUserId());
-            System.out.println("Sender Name: " + sender.getName());
-            System.out.println("Sender Address: " + sender.getAddress());
-            System.out.println("Sender Contact: " + sender.getContact());
+
 
             User recipient = new User();
             int recipientId = generateRandomUserId();
             recipient.setUserId(recipientId);
-            recipient.setName(root.path("recipient").path("name").asText());
-            recipient.setAddress(root.path("recipient").path("address").asText());
-            recipient.setContact(root.path("recipient").path("contact").asText());
-            users[1] = recipient; // Store recipient in array
+            recipient.setName(validateString(root.path("recipient").path("name").asText(), "recipient.name"));
+            recipient.setAddress(validateString(root.path("recipient").path("address").asText(), "recipient.address"));
+            recipient.setContact(validateString(root.path("recipient").path("contact").asText(), "recipient.contact"));
+            users[1] = recipient;
             shipment.setRecipientId(recipientId);
-            System.out.println("Recipient ID: " + recipient.getUserId());
-            System.out.println("Recipient Name: " + recipient.getName());
-            System.out.println("Recipient Address: " + recipient.getAddress());
-            System.out.println("Recipient Contact: " + recipient.getContact());
 
-            shipment.setShippingMethod(root.path("shipping_method").asText());
-            System.out.println("Shipping Method: " + shipment.getShippingMethod());
-            shipment.setDeliveryDate(root.path("estimated_delivery_date").asText());
-            System.out.println("Estimated Delivery Date: " + shipment.getDeliveryDate());
-            shipment.setTotalCost(root.path("total_cost").asDouble());
-            System.out.println("Total Cost: " + shipment.getTotalCost());
-            shipment.setCurrency(root.path("currency").asText());
-            System.out.println("Currency: " + shipment.getCurrency());
-            shipment.setStatus(root.path("status").asText());
-            System.out.println("Status: " + shipment.getStatus());
+
+            shipment.setShippingMethod(validateString(root.path("shipping_method").asText(), "shipping_method"));
+            shipment.setDeliveryDate(validateDate(root.path("estimated_delivery_date").asText(), "estimated_delivery_date"));
+            shipment.setTotalCost(validateDouble(root.path("total_cost").asDouble(), "total_cost"));
+            shipment.setCurrency(validateCurrency(root.path("currency").asText(), "currency"));
+            shipment.setStatus(validateString(root.path("status").asText(), "status"));
+
 
             JsonNode packagesNode = root.path("package_details");
             for (JsonNode packageNode : packagesNode) {
                 Package pkg = new Package();
-                pkg.setPackageId(packageNode.path("package_id").asText());
-                pkg.setDescription(packageNode.path("description").asText());
-                pkg.setWeight(packageNode.path("weight_kg").asDouble());
-                pkg.setLength((int) packageNode.path("dimensions_cm").path("length").asDouble());
-                pkg.setWidth((int) packageNode.path("dimensions_cm").path("width").asDouble());
-                pkg.setHeight((int) packageNode.path("dimensions_cm").path("height").asDouble());
+                pkg.setPackageId(validateString(packageNode.path("package_id").asText(), "package_id"));
+                pkg.setDescription(validateString(packageNode.path("description").asText(), "description"));
+                pkg.setWeight(validateDouble(packageNode.path("weight_kg").asDouble(), "weight_kg"));
+                pkg.setLength(validateInt(packageNode.path("dimensions_cm").path("length").asInt(), "length"));
+                pkg.setWidth(validateInt(packageNode.path("dimensions_cm").path("width").asInt(), "width"));
+                pkg.setHeight(validateInt(packageNode.path("dimensions_cm").path("height").asInt(), "height"));
                 packages.add(pkg);
-
-                System.out.println("Package ID: " + pkg.getPackageId());
-                System.out.println("Description: " + pkg.getDescription());
-                System.out.println("Weight: " + pkg.getWeight());
-                System.out.println("Length: " + pkg.getLength());
-                System.out.println("Width: " + pkg.getWidth());
-                System.out.println("Height: " + pkg.getHeight());
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw new IllegalArgumentException("Invalid shipment data", e);
         }
-        return new Object[] {shipment, users, packages};
+        return new Object[]{shipment, users, packages};
+    }
+
+    private static String validateString(String value, String fieldName) throws IllegalArgumentException {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException("Invalid value for " + fieldName);
+        }
+        return value;
+    }
+
+    private static int validateInt(int value, String fieldName) throws IllegalArgumentException {
+        if (value <= 0) {
+            throw new IllegalArgumentException("Invalid value for " + fieldName);
+        }
+        return value;
+    }
+
+    private static double validateDouble(double value, String fieldName) throws IllegalArgumentException {
+        if (value <= 0) {
+            throw new IllegalArgumentException("Invalid value for " + fieldName);
+        }
+        return value;
+    }
+
+    private static String validateCurrency(String value, String fieldName) throws IllegalArgumentException {
+        if (!CURRENCY_PATTERN.matcher(value).matches()) {
+            throw new IllegalArgumentException("Invalid value for " + fieldName);
+        }
+        return value;
+    }
+
+    private static String validateDate(String value, String fieldName) throws IllegalArgumentException {
+        if (!DATE_PATTERN.matcher(value).matches()) {
+            throw new IllegalArgumentException("Invalid value for " + fieldName);
+        }
+        return value;
     }
 }
-
