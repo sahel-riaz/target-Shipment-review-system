@@ -1,0 +1,51 @@
+{
+  "shipment_id": "SH512391234",
+  "sender": {
+    "name": "Brad Pit",
+    "address": "754 Maple Street, Berlin, Germany",
+    "contact": "brad.pit@gmail.com"
+  },
+  "recipient": {
+    "name": "Joshua",
+    "address": "465 hellen Street, Toronto, Canada",
+    "contact": "josh.joshua@gmail.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG004",
+      "description": "Books",
+      "weight_kg": 10.8,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 5,
+        "height": 6
+      }
+    },
+    {
+      "package_id": "PKG005",
+      "description": "Electrical",
+      "weight_kg": 8.6,
+      "dimensions_cm": {
+        "length": 32,
+        "width": 15,
+        "height": 12
+      }
+    },
+
+    {
+      "package_id": "PKG006",
+      "description": "Clothing",
+      "weight_kg": 26.5,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 30,
+        "height": 20
+      }
+    }
+  ],
+  "shipping_method": "Express",
+  "estimated_delivery_date": "2024-07-02",
+  "total_cost": 60.00,
+  "currency": "INR",
+  "status": "In transit"
+}

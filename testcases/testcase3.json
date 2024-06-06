@@ -1,0 +1,51 @@
+{
+  "shipment_id": "@SH82292802",
+  "sender": {
+    "name": "lekya",
+    "address": "345 SM Street, Calicut, India",
+    "contact": "lekya@gmail.com"
+  },
+  "recipient": {
+    "name": "Susmitha",
+    "address": "465 tokyo Street, Paris, France",
+    "contact": "susmitha@gmail.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG001",
+      "description": "furniture",
+      "weight_kg": -9,
+      "dimensions_cm": {
+        "length": 10.3,
+        "width": -15,
+        "height": 12
+      }
+    },
+    {
+      "package_id": "PKG002",
+      "description": "Instruments",
+      "weight_kg": 35,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 30,
+        "height": -10.5678
+      }
+    },
+    {
+      "package_id": "PKG003",
+      "description": "decorative_items",
+      "weight_kg": 100.3,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 45.4,
+        "height": 10
+      }
+    }
+
+  ],
+  "shipping_method": "IndianExpress",
+  "estimated_delivery_date": "@2024-06-15",
+  "total_cost": 120$,
+  "currency": "EUR",
+  "status": "In transit"
+}
