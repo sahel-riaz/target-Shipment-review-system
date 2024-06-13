@@ -16,12 +16,12 @@ public class ShipmentParser {
     private static final Pattern CURRENCY_PATTERN = Pattern.compile("^[A-Z]{3}$");
     private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
 
-    private static int generateRandomUserId() {
+    private int generateRandomUserId() {
         Random random = new Random();
         return random.nextInt(10000);
     }
 
-    public static Object[] parseShipment(String json) {
+    public Object[] parseShipment(String json) {
         ObjectMapper mapper = new ObjectMapper();
         Shipment shipment = new Shipment();
         User[] users = new User[2];
@@ -30,9 +30,7 @@ public class ShipmentParser {
         try {
             JsonNode root = mapper.readTree(json);
 
-
             shipment.setId(validateString(root.path("shipment_id").asText(), "shipment_id"));
-
 
             User sender = new User();
             int senderId = generateRandomUserId();
@@ -43,7 +41,6 @@ public class ShipmentParser {
             users[0] = sender;
             shipment.setSenderId(senderId);
 
-
             User recipient = new User();
             int recipientId = generateRandomUserId();
             recipient.setUserId(recipientId);
@@ -53,13 +50,11 @@ public class ShipmentParser {
             users[1] = recipient;
             shipment.setRecipientId(recipientId);
 
-
             shipment.setShippingMethod(validateString(root.path("shipping_method").asText(), "shipping_method"));
             shipment.setDeliveryDate(validateDate(root.path("estimated_delivery_date").asText(), "estimated_delivery_date"));
             shipment.setTotalCost(validateDouble(root.path("total_cost").asDouble(), "total_cost"));
             shipment.setCurrency(validateCurrency(root.path("currency").asText(), "currency"));
             shipment.setStatus(validateString(root.path("status").asText(), "status"));
-
 
             JsonNode packagesNode = root.path("package_details");
             for (JsonNode packageNode : packagesNode) {
@@ -80,35 +75,35 @@ public class ShipmentParser {
         return new Object[]{shipment, users, packages};
     }
 
-    private static String validateString(String value, String fieldName) throws IllegalArgumentException {
+    private String validateString(String value, String fieldName) throws IllegalArgumentException {
         if (value == null || value.isEmpty()) {
             throw new IllegalArgumentException("Invalid value for " + fieldName);
         }
         return value;
     }
 
-    private static int validateInt(int value, String fieldName) throws IllegalArgumentException {
+    private int validateInt(int value, String fieldName) throws IllegalArgumentException {
         if (value <= 0) {
             throw new IllegalArgumentException("Invalid value for " + fieldName);
         }
         return value;
     }
 
-    private static double validateDouble(double value, String fieldName) throws IllegalArgumentException {
+    private double validateDouble(double value, String fieldName) throws IllegalArgumentException {
         if (value <= 0) {
             throw new IllegalArgumentException("Invalid value for " + fieldName);
         }
         return value;
     }
 
-    private static String validateCurrency(String value, String fieldName) throws IllegalArgumentException {
+    private String validateCurrency(String value, String fieldName) throws IllegalArgumentException {
         if (!CURRENCY_PATTERN.matcher(value).matches()) {
             throw new IllegalArgumentException("Invalid value for " + fieldName);
         }
         return value;
     }
 
-    private static String validateDate(String value, String fieldName) throws IllegalArgumentException {
+    private String validateDate(String value, String fieldName) throws IllegalArgumentException {
         if (!DATE_PATTERN.matcher(value).matches()) {
             throw new IllegalArgumentException("Invalid value for " + fieldName);
         }
