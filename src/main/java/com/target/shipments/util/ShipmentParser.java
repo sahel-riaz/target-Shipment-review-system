@@ -57,6 +57,10 @@ public class ShipmentParser {
             shipment.setStatus(validateString(root.path("status").asText(), "status"));
 
             JsonNode packagesNode = root.path("package_details");
+            if (!packagesNode.isArray() || packagesNode.size() == 0) {
+                throw new IllegalArgumentException("Package details cannot be empty");
+            }
+
             for (JsonNode packageNode : packagesNode) {
                 Package pkg = new Package();
                 pkg.setPackageId(validateString(packageNode.path("package_id").asText(), "package_id"));
