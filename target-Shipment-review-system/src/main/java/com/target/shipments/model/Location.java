@@ -10,12 +10,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @ToString(exclude = "shipment")
-@Table(name = "users")
-public class User {
+@Table(name = "location")
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer user_id;
     private String name;
+    private String identity;
     private String address;
     private String contact;
 }
