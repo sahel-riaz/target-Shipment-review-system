@@ -2,6 +2,8 @@ package com.target.shipments.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "shipment_package")
 public class ShipmentPackage {
@@ -39,5 +41,18 @@ public class ShipmentPackage {
 
     public void setPackage(Package pkg) {
         this.pkg = pkg;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShipmentPackage that = (ShipmentPackage) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

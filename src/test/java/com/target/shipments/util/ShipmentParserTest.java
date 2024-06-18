@@ -134,7 +134,7 @@ public class ShipmentParserTest {
                 "  \"currency\": \"INR\",\n" +
                 "  \"status\": \"In transit\"\n";
 
-        // Simulate an exception being thrown when the invalid JSON is read
+        // invalid JSON is read
         when(objectMapper.readTree(anyString())).thenThrow(new IllegalArgumentException("Invalid JSON"));
 
         assertThrows(IllegalArgumentException.class, () -> shipmentParser.parseShipment(invalidJson));
