@@ -29,15 +29,27 @@ public class Shipment implements Serializable {
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
-    private User sender;
+    private Location sender;
 
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "recipient_id", referencedColumnName = "user_id")
-    private User recipient;
+    private Location recipient;
 
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "shipment_id", referencedColumnName = "shipment_id")
     private List<Package> package_details;
+
+    @PrePersist
+    public void onPrePersist() {
+        this.sender.setIdentity("Sender");
+        this.recipient.setIdentity("Recipient");
+    }
+
+    @PreUpdate
+    public void onPreUpdate() {
+        this.sender.setIdentity("Sender");
+        this.recipient.setIdentity("Recipient");
+    }
 }
