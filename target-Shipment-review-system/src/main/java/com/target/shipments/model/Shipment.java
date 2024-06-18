@@ -28,12 +28,12 @@ public class Shipment implements Serializable {
 
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "sender_id", referencedColumnName = "location_id")
     private Location sender;
 
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "recipient_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "recipient_id", referencedColumnName = "location_id")
     private Location recipient;
 
 
