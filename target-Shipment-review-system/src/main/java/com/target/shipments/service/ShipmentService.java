@@ -41,11 +41,11 @@ public class ShipmentService {
             shipment.setRecipient(findRecipient);
             shipment.setSender(findSender);
         }
-        else if(findSender == null){
-            shipment.setRecipient(findRecipient);
-        }
-        else if(findRecipient == null){
+        else if(findSender != null){
             shipment.setSender(findSender);
+        }
+        else if(findRecipient != null){
+            shipment.setRecipient(findRecipient);
         }
         return shipmentRepository.save(shipment);
 
