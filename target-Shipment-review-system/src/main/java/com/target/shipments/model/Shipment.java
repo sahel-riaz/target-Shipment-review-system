@@ -41,7 +41,7 @@ public class Shipment implements Serializable {
     @JoinColumn(name = "shipment_id", referencedColumnName = "shipment_id")
     private List<Package> package_details;
 
-    @PrePersist
+    /*@PrePersist
     public void onPrePersist() {
         this.sender.setIdentity("Sender");
         this.recipient.setIdentity("Recipient");
@@ -51,5 +51,5 @@ public class Shipment implements Serializable {
     public void onPreUpdate() {
         this.sender.setIdentity("Sender");
         this.recipient.setIdentity("Recipient");
-    }
+    }*/
 }
