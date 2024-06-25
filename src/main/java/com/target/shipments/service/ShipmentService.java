@@ -41,10 +41,10 @@ public class ShipmentService {
             Object[] parsedData = ShipmentParser.parseShipment(shipmentData);
             Shipment shipment = (Shipment) parsedData[0];
             User[] users = (User[]) parsedData[1];
-            Set<Package> packages = (Set<Package>) parsedData[2]; 
+            Set<Package> packages = (Set<Package>) parsedData[2];
 
             for (User user : users) {
-                if (user == null) continue; 
+                if (user == null) continue;
 
                 User existingUser = userRepository.findByName(user.getName());
 
@@ -58,26 +58,26 @@ public class ShipmentService {
 
             // Save packages
             logger.info("Saving packages");
-        for (Package pkg : packages) {
-            packageRepository.save(pkg);
-        }
+            for (Package pkg : packages) {
+                packageRepository.save(pkg);
+            }
 
-        // Save shipment
-        logger.info("Saving shipment");
-        shipmentRepository.save(shipment);
+            // Save shipment
+            logger.info("Saving shipment");
+            shipmentRepository.save(shipment);
 
-        // Save shipment packages
-        logger.info("Saving shipment packages");
-        for (Package pkg : packages) {
-            // Create a new ShipmentPackage for each package
-            ShipmentPackage shipmentPackage = new ShipmentPackage();
-            ShipmentPackageId shipmentPackageId = new ShipmentPackageId();
-            shipmentPackageId.setShipmentId(shipment.getId());
-            shipmentPackageId.setPackageId(pkg.getPackageId());
-            shipmentPackage.setId(shipmentPackageId);
-            
-            // Save the shipment package
-            shipmentPackageRepository.save(shipmentPackage);
+            // Save shipment packages
+            logger.info("Saving shipment packages");
+            for (Package pkg : packages) {
+                // Create a new ShipmentPackage for each package
+                ShipmentPackage shipmentPackage = new ShipmentPackage();
+                ShipmentPackageId shipmentPackageId = new ShipmentPackageId();
+                shipmentPackageId.setShipmentId(shipment.getId());
+                shipmentPackageId.setPackageId(pkg.getPackageId());
+                shipmentPackage.setId(shipmentPackageId);
+
+                // Save the shipment package
+                shipmentPackageRepository.save(shipmentPackage);
             }
 
         } catch (Exception e) {
