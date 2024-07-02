@@ -14,7 +14,7 @@ import lombok.ToString;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer user_id;
+    private Integer location_id;
     private String name;
     private String identity;
     private String address;
