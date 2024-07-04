@@ -1,88 +1,72 @@
 package com.target.shipments.service;
 
-import com.target.shipments.entity.Package;
-import com.target.shipments.entity.Shipment;
-import com.target.shipments.entity.ShipmentPackage;
-import com.target.shipments.entity.ShipmentPackageId;
-import com.target.shipments.entity.User;
-import com.target.shipments.repository.PackageRepository;
-import com.target.shipments.repository.ShipmentPackageRepository;
-import com.target.shipments.repository.ShipmentRepository;
-import com.target.shipments.repository.UserRepository;
-import com.target.shipments.util.ShipmentParser;
+import com.target.shipments.model.Location;
+import com.target.shipments.model.Shipment;
+import com.target.shipments.repository.jpa.LocationRepository;
+import com.target.shipments.repository.jpa.ShipmentRepository;
+
+// import com.target.shipments.repository.ShipmentESRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.Set;
-
+import java.util.List;
+import java.util.Optional;
 @Service
 public class ShipmentService {
-
-    private static final Logger logger = LoggerFactory.getLogger(ShipmentService.class);
-
     @Autowired
     private ShipmentRepository shipmentRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private LocationRepository locationRepository;
 
-    @Autowired
-    private PackageRepository packageRepository;
 
-    @Autowired
-    private ShipmentPackageRepository shipmentPackageRepository;
+    //ES CODE:
+    // @Autowired
+    // private ShipmentESRepository shipmentESRepo;
 
-    @Transactional
-    public void processShipment(String shipmentData) {
-        try {
-            Object[] parsedData = ShipmentParser.parseShipment(shipmentData);
-            Shipment shipment = (Shipment) parsedData[0];
-            User[] users = (User[]) parsedData[1];
-            Set<Package> packages = (Set<Package>) parsedData[2]; 
+    // public Iterable<ShipmentES> getShipments(){
+    //     return shipmentESRepo.findAll();
+    // }
+    //End of ES
 
-            for (User user : users) {
-                if (user == null) continue; 
 
-                User existingUser = userRepository.findByName(user.getName());
+    public List<Shipment> getAll() {
+        return shipmentRepository.findAll();
+    }
 
-                if (existingUser == null) {
-                    logger.info("{} does not exist, saving new user", user.getName());
-                    userRepository.save(user);
-                } else {
-                    logger.info("{} already exists", user.getName());
-                }
-            }
+    public Optional<Shipment> getById(String id) {
+        return shipmentRepository.findById(id);
+    }
 
-            // Save packages
-            logger.info("Saving packages");
-        for (Package pkg : packages) {
-            packageRepository.save(pkg);
+    public Shipment save(Shipment shipment) {
+
+        Location sender = shipment.getSender();
+        Location recipient = shipment.getRecipient();
+
+        sender.setIdentity("Sender");
+        recipient.setIdentity("Recipient");
+        Location findSender = locationRepository.findLocation(sender.getName(), sender.getIdentity(),
+                                                                sender.getAddress(), sender.getContact());
+        Location findRecipient = locationRepository.findLocation(recipient.getName(), recipient.getIdentity(),
+                                                                recipient.getAddress(), recipient.getContact());
+        
+        if(findRecipient != null && findSender != null){
+            shipment.setRecipient(findRecipient);
+            shipment.setSender(findSender);
         }
-
-        // Save shipment
-        logger.info("Saving shipment");
-        shipmentRepository.save(shipment);
-
-        // Save shipment packages
-        logger.info("Saving shipment packages");
-        for (Package pkg : packages) {
-            // Create a new ShipmentPackage for each package
-            ShipmentPackage shipmentPackage = new ShipmentPackage();
-            ShipmentPackageId shipmentPackageId = new ShipmentPackageId();
-            shipmentPackageId.setShipmentId(shipment.getId());
-            shipmentPackageId.setPackageId(pkg.getPackageId());
-            shipmentPackage.setId(shipmentPackageId);
-            
-            // Save the shipment package
-            shipmentPackageRepository.save(shipmentPackage);
-            }
-
-        } catch (Exception e) {
-            logger.error("Error processing shipment data: {}", shipmentData, e);
-            throw e;
+        else if(findSender != null){
+            shipment.setSender(findSender);
         }
+        else if(findRecipient != null){
+            shipment.setRecipient(findRecipient);
+        }
+        return shipmentRepository.save(shipment);
+
+    }
+
+    public void deleteById(String id) {
+        shipmentRepository.deleteById(id);
     }
 }
+
