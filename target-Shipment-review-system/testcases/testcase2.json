@@ -1,0 +1,29 @@
+{
+  "shipment_id": "-SH256894321",
+  "sender": {
+    "name": "Alia",
+    "address": "123 Gandhi Street, Banglore, India",
+    "contact": "alia123@gmail.com"
+  },
+  "recipient": {
+    "name": "Ghosh@12",
+    "address": "465 Nehru Nagar, Rajahmundry, India",
+    "contact": "ghosh@gmail.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG010",
+      "description": "Electronics",
+      "weight_kg": 8.6,
+      "dimensions_cm": {
+        "length": -24.00,
+        "width": 15,
+        "height": 12.36
+      }
+    }  ],
+  "shipping_method": "Delhivery",
+  "estimated_delivery_date": "-2024-06-15",
+  "total_cost": 126.3,
+  "currency": "INR",
+  "status": "In transit"
+}
