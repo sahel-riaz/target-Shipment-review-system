@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString(exclude = "shipment")
+@ToString(exclude = {"sentShipments", "receivedShipments"})
 @Table(name = "location")
 public class Location {
     @Id
