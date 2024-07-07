@@ -17,6 +17,7 @@ public class ShipmentService {
     @Autowired
     private LocationRepository locationRepository;
 
+// GET Requests
     public List<Shipment> getAll() {
         return shipmentRepository.findAll();
     }
@@ -25,6 +26,18 @@ public class ShipmentService {
         return shipmentRepository.findById(id);
     }
 
+    public List<Shipment> getByShippingMethod(String shipping_method){return shipmentRepository.findByShipping_Method(shipping_method);}
+    public List<Shipment> getByCurrency(String currency){return shipmentRepository.findByCurrency(currency);}
+    public List<Shipment> getByStatus(String status){return shipmentRepository.findByStatus(status);}
+
+
+    public long getShippingMethodCount(String shipping_method){return shipmentRepository.countByShipping_Method(shipping_method);}
+    public long getCurrencyCount(String currency){return shipmentRepository.countByCurrency(currency);}
+    public long getStatusCount(String status){return shipmentRepository.countByStatus(status);}
+
+
+
+    // POST Requests
     public Shipment save(Shipment shipment) {
 
         Location sender = shipment.getSender();
@@ -36,7 +49,7 @@ public class ShipmentService {
                                                                 sender.getAddress(), sender.getContact());
         Location findRecipient = locationRepository.findLocation(recipient.getName(), recipient.getIdentity(),
                                                                 recipient.getAddress(), recipient.getContact());
-        
+
         if(findRecipient != null && findSender != null){
             shipment.setRecipient(findRecipient);
             shipment.setSender(findSender);
@@ -48,9 +61,10 @@ public class ShipmentService {
             shipment.setRecipient(findRecipient);
         }
         return shipmentRepository.save(shipment);
-
     }
 
+
+    // DELETE Requests
     public void deleteById(String id) {
         shipmentRepository.deleteById(id);
     }
