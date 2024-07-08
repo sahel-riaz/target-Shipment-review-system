@@ -1,0 +1,404 @@
+[{
+  "shipment_id": "SH567891234",
+  "sender": {
+    "name": "Zade Woe",
+    "address": "345 Pine Street, Tokyo, Japan",
+    "contact": "zade.woe@example.com"
+  },
+  "recipient": {
+    "name": "Josh Larsen",
+    "address": "465 Beach Road, Vizag, India",
+    "contact": "josh.larsen@example.com"
+  },
+  "package_details": [
+    {
+      "package_id": "PKG001",
+      "description": "Skincare",
+      "weight_kg": 6.3,
+      "dimensions_cm": {
+        "length": 10,
+        "width": 5,
+        "height": 12
+      }
+    },
+    {
+      "package_id": "PKG002",
+      "description": "Toys",
+      "weight_kg": 6.5,
+      "dimensions_cm": {
+        "length": 16,
+        "width": 30,
+        "height": 10
+      }
+    }
+  ],
+  "shipping_method": "Drop",
+  "estimated_delivery_date": "2024-06-15",
+  "total_cost": 60.00,
+  "currency": "INR",
+  "status": "In transit"
+}
+,
+
+{
+"shipment_id": "-SH256894321",
+"sender": {
+"name": "Alia",
+"address": "123 Gandhi Street, Banglore, India",
+"contact": "alia123@gmail.com"
+},
+"recipient": {
+"name": "Ghosh@12",
+"address": "465 Nehru Nagar, Rajahmundry, India",
+"contact": "ghosh@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG003",
+"description": "Electronics",
+"weight_kg": 8.6,
+"dimensions_cm": {
+"length": -24.00,
+"width": 15,
+"height": 12.36
+}
+}
+],
+"shipping_method": "Standard",
+"estimated_delivery_date": "-2024-06-10",
+"total_cost": 126.3,
+"currency": "INR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH512391234",
+"sender": {
+"name": "Brad Pit",
+"address": "754 Maple Street, Berlin, Germany",
+"contact": "brad.pit@gmail.com"
+},
+"recipient": {
+"name": "Joshua",
+"address": "465 hellen Street, Toronto, Canada",
+"contact": "josh.joshua@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG004",
+"description": "Books",
+"weight_kg": 10.8,
+"dimensions_cm": {
+"length": 20,
+"width": 5,
+"height": 6
+}
+},
+{
+"package_id": "PKG005",
+"description": "Electrical",
+"weight_kg": 8.6,
+"dimensions_cm": {
+"length": 32,
+"width": 15,
+"height": 12
+}
+},
+
+{
+"package_id": "PKG006",
+"description": "Clothing",
+"weight_kg": 26.5,
+"dimensions_cm": {
+"length": 16,
+"width": 30,
+"height": 20
+}
+}
+],
+"shipping_method": "Express",
+"estimated_delivery_date": "2024-07-02",
+"total_cost": 60.00,
+"currency": "INR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH564171234",
+"sender": {
+"name": "Rose",
+"address": "304 Oak lane, Rome, Italy",
+"contact": "rose456@gmail.com"
+},
+"recipient": {
+"name": "Larsen",
+"address": "465 Elm Street, Madrid, Spain",
+"contact": "larsen34@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG007",
+"description": "Sports",
+"weight_kg": 50.50,
+"dimensions_cm": {
+"length": 35,
+"width": 17,
+"height": 14
+}
+},
+{
+"package_id": "PKG008",
+"description": "Health",
+"weight_kg": 40.56,
+"dimensions_cm": {
+"length": 40,
+"width": 80,
+"height": 40
+}
+}
+],
+"shipping_method": "International",
+"estimated_delivery_date": "2024-06-12",
+"total_cost": 120.00,
+"currency": "EUR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH567891234",
+"sender": {
+"name": "Zade Woe",
+"address": "345 Church Street, Mumbai, India",
+"contact": "zade.woe@gmail.com"
+},
+"recipient": {
+"name": "Josh Larsen",
+"address": "465 Ellen Street, CapeTown, SouthAfrica",
+"contact": "josh.larsen@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG009",
+"description": "Electrical",
+"weight_kg": 8,
+"dimensions_cm": {
+"length": 30.5,
+"width": 15,
+"height": @12
+}
+},
+{
+"package_id": "PKG010",
+"description": "Toys",
+"weight_kg": -6,
+"dimensions_cm": {
+"length": 16,
+"width": #30,
+"height": 10
+}
+}
+],
+"shipping_method": "Express",
+"estimated_delivery_date": "2024-07-05",
+"total_cost": AB20,
+"currency": "ZAR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH847631234",
+"sender": {
+"name": "Leo",
+"address": "902 Magnolia Street, Berlin, Germany",
+"contact": "leo34@example.com"
+},
+"recipient": {
+"name": "Josen",
+"address": "220 Willow lane, Cairo, Egypt",
+"contact": "josen22@example.com"
+},
+"package_details": [
+{
+"package_id": "PKG011",
+"description": "Food",
+"weight_kg": 30,
+"dimensions_cm": {
+"length": 40,
+"width": 25,
+"height": 18
+}
+}
+],
+"shipping_method": "Express",
+"estimated_delivery_date": "2024-07-25",
+"total_cost": 160.00,
+"currency": "EGP",
+"status": "In transit"
+},
+{
+"shipment_id": "SH123451234",
+"sender": {
+"name": "Modi",
+"address": "345 Gandhi Street, Gandhinagar, India",
+"contact": "modi66@gmail.com"
+},
+"recipient": {
+"name": "Sonia",
+"address": "891 Indira Street, Delhi, India",
+"contact": "sonia24@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG012",
+"description": "Household",
+"weight_kg": 10.3,
+"dimensions_cm": {
+"length": 35,
+"width": 25,
+"height": 12
+}
+},
+{
+"package_id": "PKG013",
+"description": "Toys",
+"weight_kg": 6.5,
+"dimensions_cm": {
+"length": 16,
+"width": 35,
+"height": 10
+}
+}
+],
+"shipping_method": "Standard",
+"estimated_delivery_date": "2024-06-28",
+"total_cost": 1260.00,
+"currency": "INR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH567812934",
+"sender": {
+"name": "Pawan",
+"address": "525 Haw Street, Vizag, India",
+"contact": "Pawan22@gmail.com"
+},
+"recipient": {
+"name": "Kalyan",
+"address": "22 Colen Lane, Vijayawada, India",
+"contact": "kalyan56@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG014",
+"description": "Hardware",
+"weight_kg": 48.6,
+"dimensions_cm": {
+"length": 30,
+"width": 55,
+"height": 22
+}
+},
+{
+"package_id": "PKG015",
+"description": "Sports",
+"weight_kg": 26.5,
+"dimensions_cm": {
+"length": 36,
+"width": 30,
+"height": 16
+}
+}
+],
+"shipping_method": "Express",
+"estimated_delivery_date": "2024-06-27",
+"total_cost": 1500.50,
+"currency": "INR",
+"status": "In transit"
+},
+{
+"shipment_id": "@SH82292802",
+"sender": {
+"name": "lekya",
+"address": "345 SM Street, Calicut, India",
+"contact": "lekya@gmail.com"
+},
+"recipient": {
+"name": "Susmitha",
+"address": "465 tokyo Street, Paris, France",
+"contact": "susmitha@gmail.com"
+},
+"package_details": [
+{
+"package_id": "#PKG016",
+"description": "furniture",
+"weight_kg": -9,
+"dimensions_cm": {
+"length": 10.3,
+"width": -15,
+"height": 12
+}
+},
+{
+"package_id": "PKG017",
+"description": "Instruments",
+"weight_kg": 35,
+"dimensions_cm": {
+"length": 16,
+"width": 30,
+"height": -10.5678
+}
+}
+],
+"shipping_method": "Overnight",
+"estimated_delivery_date": "@2024-06-15",
+"total_cost": 120$,
+"currency": "EUR",
+"status": "In transit"
+},
+{
+"shipment_id": "SH567234534",
+"sender": {
+"name": "Jane",
+"address": "345 Pine Street, Delhi, India",
+"contact": "jane@gmail.com"
+},
+"recipient": {
+"name": "Anisha",
+"address": "45 Cherry Street, Vizianagaram, India",
+"contact": "ani345@gmail.com"
+},
+"package_details": [
+{
+"package_id": "PKG018",
+"description": "decorative_items",
+"weight_kg": 20.4,
+"dimensions_cm": {
+"length": 19,
+"width": 25,
+"height": 10
+}
+},
+{
+"package_id": "PKG019",
+"description": "Household",
+"weight_kg": 18.6,
+"dimensions_cm": {
+"length": 30,
+"width": 25,
+"height": 12
+}
+},
+{
+"package_id": "PKG020",
+"description": "Toys",
+"weight_kg": 16.5,
+"dimensions_cm": {
+"length": 16,
+"width": 10,
+"height": 10
+}
+}
+],
+"shipping_method": "Express",
+"estimated_delivery_date": "2024-07-01",
+"total_cost": 250.00,
+"currency": "INR",
+"status": "In transit"
+}
+]

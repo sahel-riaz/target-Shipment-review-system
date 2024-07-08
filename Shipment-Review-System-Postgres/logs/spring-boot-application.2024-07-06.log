@@ -1,0 +1,19 @@
+2024-07-06 00:55:13 INFO  c.t.shipments.ShipmentApplication - Starting ShipmentApplication using Java 19.0.1 with PID 21652 (C:\Users\Sai Tejaswi\OneDrive\Desktop\Target-Ready\Project\target-Shipment-review-system\target\classes started by Sai Tejaswi in C:\Users\Sai Tejaswi\OneDrive\Desktop\Target-Ready\Project\target-Shipment-review-system)
+2024-07-06 00:55:13 DEBUG c.t.shipments.ShipmentApplication - Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-06 00:55:13 INFO  c.t.shipments.ShipmentApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-06 00:55:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-06 00:55:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2024-07-06 00:55:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-07-06 00:55:15 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2071 ms
+2024-07-06 00:55:16 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-06 00:55:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-06 00:55:19 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-06 00:55:20 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-06 00:55:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-07-06 00:55:21 INFO  c.t.shipments.ShipmentApplication - Started ShipmentApplication in 8.5 seconds (process running for 9.282)
+2024-07-06 01:02:56 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-07-06 01:02:56 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 26 ms
+2024-07-06 01:07:48 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.target.shipments.model.Shipment` from Array value (token `JsonToken.START_ARRAY`)]
+2024-07-06 01:08:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('{' (code 123)): was expecting double-quote to start field name]
+2024-07-06 01:17:32 INFO  o.s.k.l.KafkaMessageListenerContainer - com.target: Consumer stopped
+2024-07-06 01:17:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
