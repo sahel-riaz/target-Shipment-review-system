@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString(exclude = "shipment")
+@ToString(exclude = {"sentShipments", "receivedShipments"})
 @Table(name = "location")
 public class Location {
     @Id
@@ -19,4 +19,14 @@ public class Location {
     private String identity;
     private String address;
     private String contact;
+
+    @Transient
+    @JsonIgnore
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
+    private List<Shipment> sentShipments;
+
+    @Transient
+    @JsonIgnore
+    @OneToMany(mappedBy = "recipient", cascade = CascadeType.ALL)
+    private List<Shipment> receivedShipments;
 }
