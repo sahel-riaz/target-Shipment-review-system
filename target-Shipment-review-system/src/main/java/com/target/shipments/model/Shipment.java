@@ -1,12 +1,10 @@
 package com.target.shipments.model;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
-
 import java.io.Serializable;
 import java.util.List;
 @Data
@@ -14,10 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "shipment")
-
 public class Shipment implements Serializable {
-
-
     @Id
     private String shipment_id;
     private String shipping_method;
