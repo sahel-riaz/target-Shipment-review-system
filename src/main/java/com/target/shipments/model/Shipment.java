@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.type.SqlTypes;
 
 import java.io.Serializable;
@@ -30,16 +32,19 @@ public class Shipment implements Serializable {
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "sender_id", referencedColumnName = "location_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Location sender;
 
     @JdbcTypeCode(SqlTypes.JSON)
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "recipient_id", referencedColumnName = "location_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Location recipient;
 
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "shipment_id", referencedColumnName = "shipment_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Package> package_details;
 
     /*@PrePersist

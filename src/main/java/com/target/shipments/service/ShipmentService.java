@@ -20,17 +20,7 @@ public class ShipmentService {
     @Autowired
     private LocationRepository locationRepository;
 
-
-    //ES CODE:
-    // @Autowired
-    // private ShipmentESRepository shipmentESRepo;
-
-    // public Iterable<ShipmentES> getShipments(){
-    //     return shipmentESRepo.findAll();
-    // }
-    //End of ES
-
-
+    // GET Requests
     public List<Shipment> getAll() {
         return shipmentRepository.findAll();
     }
@@ -39,6 +29,18 @@ public class ShipmentService {
         return shipmentRepository.findById(id);
     }
 
+    public List<Shipment> getByShippingMethod(String shipping_method){return shipmentRepository.findByShippingMethod(shipping_method);}
+    public List<Shipment> getByCurrency(String currency){return shipmentRepository.findByCurrency(currency);}
+    public List<Shipment> getByStatus(String status){return shipmentRepository.findByStatus(status);}
+
+
+    public long getShippingMethodCount(String shipping_method){return shipmentRepository.countByShippingMethod(shipping_method);}
+    public long getCurrencyCount(String currency){return shipmentRepository.countByCurrency(currency);}
+    public long getStatusCount(String status){return shipmentRepository.countByStatus(status);}
+
+
+
+    // POST Requests
     public Shipment save(Shipment shipment) {
 
         Location sender = shipment.getSender();
@@ -47,10 +49,10 @@ public class ShipmentService {
         sender.setIdentity("Sender");
         recipient.setIdentity("Recipient");
         Location findSender = locationRepository.findLocation(sender.getName(), sender.getIdentity(),
-                                                                sender.getAddress(), sender.getContact());
+                sender.getAddress(), sender.getContact());
         Location findRecipient = locationRepository.findLocation(recipient.getName(), recipient.getIdentity(),
-                                                                recipient.getAddress(), recipient.getContact());
-        
+                recipient.getAddress(), recipient.getContact());
+
         if(findRecipient != null && findSender != null){
             shipment.setRecipient(findRecipient);
             shipment.setSender(findSender);
@@ -62,15 +64,12 @@ public class ShipmentService {
             shipment.setRecipient(findRecipient);
         }
         return shipmentRepository.save(shipment);
-
     }
 
+
+    // DELETE Requests
     public void deleteById(String id) {
         shipmentRepository.deleteById(id);
-    }
-
-    public long getShippingMethodCount(String shippingMethod) {
-        return shipmentRepository.countByShippingMethod(shippingMethod);
     }
 }
 
