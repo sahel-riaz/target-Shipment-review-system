@@ -20,7 +20,8 @@ public class Shipment implements Serializable {
 
     @Id
     private String shipment_id;
-    private String shipping_method;
+    @Column(name = "shipment_method")
+    private String shippingMethod;
     private String estimated_delivery_date;
     private Double total_cost;
     private String currency;

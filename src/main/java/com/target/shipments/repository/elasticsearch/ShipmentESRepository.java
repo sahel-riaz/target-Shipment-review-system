@@ -10,5 +10,8 @@ import java.util.List;
 public interface ShipmentESRepository extends ElasticsearchRepository<ShipmentES, String> {
     List<ShipmentES> findByStatus(String status);
     long countByStatus(String status);
+    List<ShipmentES> findByCurrency(String currency);
+    void deleteByShipmentId(String shipmentId);
+    
 }
 

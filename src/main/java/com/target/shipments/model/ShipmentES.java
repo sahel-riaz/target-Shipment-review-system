@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+
+import jakarta.persistence.Column;
+
 import java.util.List;
 
 @Data
@@ -13,7 +16,8 @@ import java.util.List;
 @Document(indexName = "shipments")
 public class ShipmentES {
     @Id
-    private String shipment_id;
+    // @Column(name = "shipment_id")
+    private String shipmentId;
     private Sender sender;
     private Recipient recipient;
     private List<PackageDetail> package_details;

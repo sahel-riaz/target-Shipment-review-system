@@ -68,5 +68,9 @@ public class ShipmentService {
     public void deleteById(String id) {
         shipmentRepository.deleteById(id);
     }
+
+    public long getShippingMethodCount(String shippingMethod) {
+        return shipmentRepository.countByShippingMethod(shippingMethod);
+    }
 }
 
