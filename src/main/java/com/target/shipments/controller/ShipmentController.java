@@ -72,11 +72,11 @@ public class ShipmentController {
     }
 
 
-    //PUT Requests
-    @PutMapping ("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Shipment> update(@PathVariable String id) {
-        if (shipmentService.getById(id).isPresent()) {
-            Shipment shipment = shipmentService.getById(id).get();
+        Optional<Shipment> optionalShipment = shipmentService.getById(id);
+        if (optionalShipment.isPresent()) {
+            Shipment shipment = optionalShipment.get();
             shipment.setShipment_id(id);
             return ResponseEntity.ok(shipmentService.save(shipment));
         } else {
@@ -84,10 +84,12 @@ public class ShipmentController {
         }
     }
 
-    @PutMapping ("/{id}/shipping_method/{shipping_method}")
+
+    @PutMapping("/{id}/shipping_method/{shipping_method}")
     public ResponseEntity<Shipment> updateShippingMethod(@PathVariable String id, @PathVariable String shipping_method) {
-        if (shipmentService.getById(id).isPresent()) {
-            Shipment shipment = shipmentService.getById(id).get();
+        Optional<Shipment> optionalShipment = shipmentService.getById(id);
+        if (optionalShipment.isPresent()) {
+            Shipment shipment = optionalShipment.get();
             shipment.setShippingMethod(shipping_method);
             return ResponseEntity.ok(shipmentService.save(shipment));
         } else {
@@ -95,11 +97,11 @@ public class ShipmentController {
         }
     }
 
-
-    @PutMapping ("/{id}/currency/{currency}")
+    @PutMapping("/{id}/currency/{currency}")
     public ResponseEntity<Shipment> updateCurrency(@PathVariable String id, @PathVariable String currency) {
-        if (shipmentService.getById(id).isPresent()) {
-            Shipment shipment = shipmentService.getById(id).get();
+        Optional<Shipment> optionalShipment = shipmentService.getById(id);
+        if (optionalShipment.isPresent()) {
+            Shipment shipment = optionalShipment.get();
             shipment.setCurrency(currency);
             return ResponseEntity.ok(shipmentService.save(shipment));
         } else {
@@ -107,10 +109,11 @@ public class ShipmentController {
         }
     }
 
-    @PutMapping ("/{id}/status/{status}")
+    @PutMapping("/{id}/status/{status}")
     public ResponseEntity<Shipment> updateStatus(@PathVariable String id, @PathVariable String status) {
-        if (shipmentService.getById(id).isPresent()) {
-            Shipment shipment = shipmentService.getById(id).get();
+        Optional<Shipment> optionalShipment = shipmentService.getById(id);
+        if (optionalShipment.isPresent()) {
+            Shipment shipment = optionalShipment.get();
             shipment.setStatus(status);
             return ResponseEntity.ok(shipmentService.save(shipment));
         } else {

@@ -26,4 +26,14 @@ public class ShipmentES {
     private String total_cost;
     private String currency;
     private String status;
+    public ShipmentES(String shipmentId, String shipping_method, String estimated_delivery_date, String total_cost, String currency, String status, Sender sender, Recipient recipient) {
+        this.shipmentId = shipmentId;
+        this.shipping_method = shipping_method;
+        this.estimated_delivery_date = estimated_delivery_date;
+        this.total_cost = total_cost;
+        this.currency = currency;
+        this.status = status;
+        this.sender = sender;
+        this.recipient = recipient;
+    }
 }
